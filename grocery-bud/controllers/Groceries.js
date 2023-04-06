@@ -1,11 +1,11 @@
 const dummyData = [
   {
     id: 1,
-    itemName: "Egg is the best food i love to eat",
+    itemName: "Egg",
   },
   {
     id: 2,
-    itemName: "fish222222222222222222222222222222222222222222222222",
+    itemName: "fish",
   },
   {
     id: 3,

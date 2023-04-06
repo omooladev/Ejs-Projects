@@ -83,11 +83,17 @@ body {
       flex-direction: column;
       align-items: center;
       justify-content: space-between;
+      .item_name {
+        width: 100%;
+      }
       .item_name,
       p {
+        text-align: center;
         position: relative;
         overflow: hidden;
-
+        font-size: 1.1rem;
+        line-height: 1.65rem;
+        margin: 0.5rem 0;
         .name {
           margin-right: 1.2rem;
         }
@@ -121,9 +127,23 @@ body {
   }
 }
 
-@media (min-width: 300px) {
-  .grocery_item {
-    flex-direction: row;
+@media (min-width: 400px) {
+  .container {
+    .grocery_list {
+      .grocery_item {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        .item_name {
+          width: auto;
+          margin: 0;
+        }
+        p {
+          text-align: left;
+          margin: 0;
+        }
+      }
+    }
   }
 }
 
