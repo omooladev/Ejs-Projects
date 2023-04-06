@@ -7,7 +7,6 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 
 app.use("/", groceriesRouter);
-
 const PORT = process.env.PORT || 5000;
 //? listen
 const startServer = () => {
