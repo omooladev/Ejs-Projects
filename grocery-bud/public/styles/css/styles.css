@@ -79,8 +79,52 @@ body {
   padding: 0.5rem 0.6rem;
   color: black;
   text-transform: capitalize;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.container .grocery_list .grocery_item .item_name,
+.container .grocery_list .grocery_item p {
+  position: relative;
+  overflow: hidden;
+}
+.container .grocery_list .grocery_item .item_name .name,
+.container .grocery_list .grocery_item p .name {
+  margin-right: 1.2rem;
+}
+.container .grocery_list .grocery_item .item_name .dots,
+.container .grocery_list .grocery_item p .dots {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 0 0.2rem;
+}
+.container .grocery_list .grocery_item .icons {
+  width: 5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  overflow: hidden;
+}
+.container .grocery_list .grocery_item .icons .icon {
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+.container .grocery_list .grocery_item .icons .delete_icon {
+  color: red;
+}
+.container .grocery_list .grocery_item .icons .edit_icon {
+  color: purple;
 }
 
+@media (min-width: 300px) {
+  .grocery_item {
+    flex-direction: row;
+  }
+}
 @media (min-width: 600px) {
   .container .form {
     flex-direction: row;

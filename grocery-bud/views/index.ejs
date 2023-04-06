@@ -7,6 +7,7 @@
     <%- include("layout/fontFamily")%>
     <!-- get the page title -->
     <title><%= pageTitle %></title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="styles/css/styles.css" />
   </head>
   <body>
@@ -16,10 +17,20 @@
       <ul class="grocery_list">
         <%groceryItems.forEach(item=>{%>
         <li class="grocery_item">
+          <%if(item.itemName.length<=35){%>
           <p><%=item.itemName%></p>
+          <% }else{%>
+          <div class="item_name">
+            <p class="name"><%=item.itemName.slice(0,35)%></p>
+
+            <p class="dots">...</p>
+          </div>
+          <%}%>
+
           <span class="icons">
-            <img src="assets/icons/trash-solid.svg" />
-          </span>
+            <i class="bx bxs-edit edit_icon icon"></i
+            ><i class="bx bxs-trash-alt delete_icon icon"></i
+          ></span>
         </li>
         <%})%>
       </ul>

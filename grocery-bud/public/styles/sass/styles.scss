@@ -78,7 +78,52 @@ body {
       padding: 0.5rem 0.6rem;
       color: black;
       text-transform: capitalize;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      .item_name,
+      p {
+        position: relative;
+        overflow: hidden;
+
+        .name {
+          margin-right: 1.2rem;
+        }
+        .dots {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          padding: 0 0.2rem;
+        }
+      }
+      .icons {
+        width: 5rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        overflow: hidden;
+
+        .icon {
+          cursor: pointer;
+          font-size: 1.2rem;
+        }
+        .delete_icon {
+          color: red;
+        }
+        .edit_icon {
+          color: purple;
+        }
+      }
     }
+  }
+}
+
+@media (min-width: 300px) {
+  .grocery_item {
+    flex-direction: row;
   }
 }
 
