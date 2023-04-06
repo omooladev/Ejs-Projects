@@ -12,7 +12,17 @@
   <body>
     <section class="container">
       <h1>Grocery Bud</h1>
-      <%- include("layout/form")%>
+      <%- include("layout/form") %>
+      <ul class="grocery_list">
+        <%groceryItems.forEach(item=>{%>
+        <li class="grocery_item">
+          <p><%=item.itemName%></p>
+          <span class="icons">
+            <img src="assets/icons/trash-solid.svg" />
+          </span>
+        </li>
+        <%})%>
+      </ul>
     </section>
   </body>
 </html>

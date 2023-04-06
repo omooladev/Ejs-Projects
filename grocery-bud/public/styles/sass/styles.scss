@@ -9,6 +9,9 @@ button {
   outline: none;
   border: none;
 }
+li {
+  list-style: none;
+}
 body {
   font-family: "Lato", sans-serif;
   background-color: rgb(177, 240, 240);
@@ -63,6 +66,18 @@ body {
       &:hover {
         background-color: rgba(133, 11, 133, 0.8);
       }
+    }
+  }
+  .grocery_list {
+    width: 100%;
+    padding: 1rem 0;
+    .grocery_item {
+      margin: 1rem 0;
+      background-color: rgba(133, 11, 133, 0.3);
+      border-radius: 0.5rem;
+      padding: 0.5rem 0.6rem;
+      color: black;
+      text-transform: capitalize;
     }
   }
 }
