@@ -31,6 +31,17 @@ body {
   flex-direction: column;
   align-items: center;
 }
+.container .reply {
+  display: none;
+  width: 100%;
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+.container .reply.error {
+  display: block;
+  background-color: red;
+}
 .container h1 {
   font-size: 1.5rem;
   padding: 0.5rem 0;

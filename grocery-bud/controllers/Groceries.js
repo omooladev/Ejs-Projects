@@ -16,4 +16,16 @@ const getGroceries = (req, res) => {
   res.render("index.ejs", { pageTitle: "Groceries", groceryItems: dummyData });
 };
 
-module.exports = { getGroceries };
+const createGrocery = (req, res) => {
+  console.log(req.body);
+  const groceryItem = req.body.grocery;
+  const newItem = groceryItem && { itemName: groceryItem };
+  if (!groceryItem) {
+    return res.render("error.ejs");
+  }
+  dummyData.push(newItem);
+
+  res.redirect("/");
+};
+
+module.exports = { getGroceries, createGrocery };

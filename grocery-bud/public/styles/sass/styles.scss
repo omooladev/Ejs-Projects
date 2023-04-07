@@ -28,7 +28,17 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  .reply {
+    display: none;
+    width: 100%;
+    text-align: center;
+    padding: 0.5rem;
+    border-radius: 5px;
+    &.error {
+      display: block;
+      background-color: red;
+    }
+  }
   h1 {
     font-size: 1.5rem;
     padding: 0.5rem 0;
