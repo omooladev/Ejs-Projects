@@ -1,16 +1,5 @@
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- get the fonts -->
-    <%- include("layout/fontFamily")%>
-    <!-- get the page title -->
-    <title><%= pageTitle %></title>
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="styles/css/styles.css" />
-    <script src="scripts/index.js" defer></script>
-  </head>
+  <%-include("layout/head")%>
   <body>
     <section class="container">
       <%- include("layout/reply") %>
@@ -21,5 +10,4 @@
       </ul>
     </section>
   </body>
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </html>

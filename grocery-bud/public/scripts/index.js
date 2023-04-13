@@ -15,4 +15,6 @@ const submitFormHandler = async (event) => {
   const response = await axios.post("/", groceryValue);
   console.log(response);
 };
-form.addEventListener("submit", submitFormHandler);
+try {
+  form.addEventListener("submit", submitFormHandler);
+} catch (error) {}

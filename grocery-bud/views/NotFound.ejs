@@ -1,13 +1,10 @@
-import { Link } from "react-router-dom";
-import styles from "./NotFound.module.css";
-const NotFound = () => {
-  return (
-    <section className={styles.not_found}>
-      <h2>Page Not Found </h2>
+<html lang="en">
+  <%-include("layout/head")%>
+  <body>
+    <section class="not_found">
+      <h2>Page Not Found</h2>
       <p>You might not have permissions to see this page</p>
-      <Link to="/groceries">Visit Groceries</Link>
+      <a href="/groceries">Visit Groceries</a>
     </section>
-  );
-};
-
-export default NotFound;
+  </body>
+</html>
