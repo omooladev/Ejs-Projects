@@ -5,16 +5,14 @@ const submitFormHandler = async (event) => {
   event.preventDefault();
   let groceryValue = groceryInput.value;
 
-  if (!groceryValue) {
-    groceryInput.focus();
-    reply.innerHTML = "Please provide an item";
-    return reply.classList.add("error");
-  }
+  // if (!groceryValue) {
+  //   groceryInput.focus();
+  //   reply.innerHTML = "Please provide an item";
+  //   return reply.classList.add("error");
+  // }
   groceryValue = { itemName: groceryValue };
 
-  const response = await axios.post("/", groceryValue);
+  const response = await axios.post("/groceries", groceryValue);
   console.log(response);
 };
-try {
-  form.addEventListener("submit", submitFormHandler);
-} catch (error) {}
+form.addEventListener("submit", submitFormHandler);

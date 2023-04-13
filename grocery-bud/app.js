@@ -11,7 +11,7 @@ app.use(express.static("public"));
 app.use(express.json());
 // app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use("/", groceriesRouter);
+app.use("", groceriesRouter);
 app.use(ErrorHandlerMiddleWare);
 app.use(NotFound);
 const PORT = process.env.PORT || 5000;

@@ -1,3 +1,5 @@
+const { BadRequestError } = require("../errors/bad-request");
+
 const dummyData = [
   {
     id: 1,
@@ -18,7 +20,9 @@ const getGroceries = (req, res) => {
 
 const createGrocery = (req, res) => {
   const { itemName } = req.body;
+
   if (!itemName) {
+    throw new BadRequestError("Please provide an item");
   }
   // const groceryItem = req.body.grocery;
   // const newItem = groceryItem && { itemName: groceryItem };
@@ -27,7 +31,7 @@ const createGrocery = (req, res) => {
   // }
   // dummyData.push(newItem);s
 
-  res.status(200).json({});
+  // res.status(200).json({});
 };
 
 module.exports = { getGroceries, createGrocery };

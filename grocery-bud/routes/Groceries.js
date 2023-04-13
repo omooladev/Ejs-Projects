@@ -5,6 +5,6 @@ const router = express.Router();
 
 router.route("/groceries").get(getGroceries).post(createGrocery);
 router.route("/").get((req, res) => {
-  res.redirect("groceries");
+  res.redirect("/groceries");
 });
 module.exports = router;
