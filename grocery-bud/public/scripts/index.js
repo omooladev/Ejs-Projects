@@ -5,14 +5,23 @@ const submitFormHandler = async (event) => {
   event.preventDefault();
   let groceryValue = groceryInput.value;
 
-  // if (!groceryValue) {
-  //   groceryInput.focus();
-  //   reply.innerHTML = "Please provide an item";
-  //   return reply.classList.add("error");
-  // }
+  if (!groceryValue) {
+    groceryInput.focus();
+    return setError("Please provide an item");
+  }
   groceryValue = { itemName: groceryValue };
-
-  const response = await axios.post("/groceries", groceryValue);
-  console.log(response);
+  try {
+    const response = await axios.post("/groceries", groceryValue);
+  } catch (err) {
+    const response = err.response || "";
+    const data = response.data || "";
+    const error = data.error || err.message;
+    setError(error);
+  }
 };
 form.addEventListener("submit", submitFormHandler);
+
+const setError = (message) => {
+  reply.innerHTML = message;
+  return reply.classList.add("error");
+};

@@ -5,7 +5,7 @@ const ErrorHandlerMiddleWare = (err, req, res, next) => {
     statusCode: err.statusCode || StatusCodes.INTERNAL_SERVER_ERROR,
   };
 
-  console.log(customError);
+  res.status(customError.statusCode).json({ error: customError.error });
 };
 
 module.exports = ErrorHandlerMiddleWare;
