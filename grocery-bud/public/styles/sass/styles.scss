@@ -34,9 +34,18 @@ body {
     text-align: center;
     padding: 0.5rem;
     border-radius: 5px;
+    width: 100%;
+    margin: 0.5rem 0;
+    font-size: 1.2rem;
+    &.success {
+      display: block;
+      color: white;
+      background-color: green;
+    }
     &.error {
       display: block;
       background-color: red;
+      color: white;
     }
   }
   h1 {

@@ -37,10 +37,19 @@ body {
   text-align: center;
   padding: 0.5rem;
   border-radius: 5px;
+  width: 100%;
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+}
+.container .reply.success {
+  display: block;
+  color: white;
+  background-color: green;
 }
 .container .reply.error {
   display: block;
   background-color: red;
+  color: white;
 }
 .container h1 {
   font-size: 1.5rem;

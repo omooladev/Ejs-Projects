@@ -17,15 +17,17 @@ const getGroceries = (req, res) => {
 };
 
 const createGrocery = (req, res) => {
-  console.log(req.body);
-  const groceryItem = req.body.grocery;
-  const newItem = groceryItem && { itemName: groceryItem };
-  if (!groceryItem) {
-    return res.render("error.ejs");
+  const { itemName } = req.body;
+  if (!itemName) {
   }
-  dummyData.push(newItem);
+  // const groceryItem = req.body.grocery;
+  // const newItem = groceryItem && { itemName: groceryItem };
+  // if (!groceryItem) {
+  //   return res.render("error.ejs");
+  // }
+  // dummyData.push(newItem);s
 
-  res.redirect("/");
+  res.status(200).json({});
 };
 
 module.exports = { getGroceries, createGrocery };
