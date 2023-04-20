@@ -24,14 +24,11 @@ const createGrocery = (req, res) => {
   if (!itemName) {
     throw new BadRequestError("Please provide an item");
   }
-  // const groceryItem = req.body.grocery;
-  // const newItem = groceryItem && { itemName: groceryItem };
-  // if (!groceryItem) {
-  //   return res.render("error.ejs");
-  // }
-  // dummyData.push(newItem);s
+  const newItem = { id: Math.random(), itemName };
 
-  // res.status(200).json({});
+  dummyData.push(newItem);
+  
+  // res.render("index.ejs", { pageTitle: "Groceries", groceryItems: dummyData });
 };
 
 module.exports = { getGroceries, createGrocery };
