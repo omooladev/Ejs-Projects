@@ -1,5 +1,5 @@
 const express = require("express");
-
+const authRoutes = require("./routes/Auth");
 const app = express();
 
 app.set("view engine", "ejs");
