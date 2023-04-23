@@ -3,7 +3,62 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+body {
+  font-family: "JetBrains Mono", monospace;
+}
 .header {
   padding: 1rem 5%;
+}
+
+.header ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.header ul .logo {
+  color: orangered;
+}
+
+.header ul nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.header ul nav li {
+  margin: 0 0.5rem;
+}
+.header ul nav li a {
+  cursor: pointer;
+  color: black;
+  padding: 0.5rem 0.6rem;
+  text-transform: uppercase;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.header ul nav li a:hover {
+  color: rgb(255, 69, 0, 0.5);
+}
+.header ul nav li a.active {
+  color: orangered;
+}
+
+.header ul nav li.login a,
+.header ul nav li.logout a {
+  color: white;
+  background-color: orangered;
+}
+.header ul nav li.login a:hover,
+.header ul nav li.logout a:hover {
+  color: white;
+  background-color: rgb(255, 69, 0, 0.5);
+  transition: all 0.4s ease;
 }
