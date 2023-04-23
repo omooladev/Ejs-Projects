@@ -7,6 +7,11 @@ app.set("view engine", "ejs");
 const PORT = process.env.PORT || 5000;
 const startServer = async () => {
   try {
-  } catch (error) {}
+    app.listen(PORT, () => {
+      return console.log(`Server is listening at PORT ${PORT}`);
+    });
+  } catch (error) {
+    console.log(error);
+  }
 };
 startServer();
