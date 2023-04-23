@@ -4,6 +4,7 @@ const userRoutes = require("./routes/User");
 const app = express();
 
 app.set("view engine", "ejs");
+app.use(express.static("public"));
 
 app.use("/", userRoutes);
 app.use("/auth", authRoutes);
