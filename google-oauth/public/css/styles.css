@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  user-select: none;
 }
 a {
   text-decoration: none;
@@ -72,6 +73,26 @@ body {
   text-align: center;
 }
 
+/*? login styles */
+.login-form {
+  max-width: 25rem;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-form h1 {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.login-form a.icon {
+  font-size: 40px;
+  color: orangered;
+  cursor: pointer;
+}
 /*? Not Found styles */
 .not_found {
   height: 100vh;
