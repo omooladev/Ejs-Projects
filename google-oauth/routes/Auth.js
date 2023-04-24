@@ -7,7 +7,12 @@ const router = express.Router();
 router.route("/login").get((req, res) => {
   res.render("Login.ejs", { pageTitle: "Login", user: null });
 });
-router.get("/google", passport.authenticate("google", { scope: ["profile"] }), (req, res) => {
-  res.send();
-});
+router.get(
+  "/google",
+  passport.authenticate("google", { scope: ["profile", "email"] }),
+  (req, res) => {
+    console.log(req.user);
+    res.send();
+  }
+);
 module.exports = router;

@@ -5,7 +5,6 @@ const userRoutes = require("./routes/User");
 const NotFound = require("./middlewares/not-found");
 const app = express();
 
-console.log(process.env.GOOGLE_CLIENT_ID);
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 
