@@ -1,5 +1,6 @@
 require("dotenv").config();
 const express = require("express");
+const cookieSession = require("cookie-session");
 const connectDB = require("./db/connect");
 const authRoutes = require("./routes/Auth");
 const userRoutes = require("./routes/User");
@@ -9,8 +10,8 @@ const app = express();
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
-app.use(passport.initialize())
-app.use(passport.session())
+app.use(passport.initialize());
+app.use(passport.session());
 app.use("/", userRoutes);
 app.use("/auth", authRoutes);
 
