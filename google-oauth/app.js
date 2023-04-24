@@ -10,8 +10,15 @@ const app = express();
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
+app.use(
+  cookieSession({
+    maxAge: process.env.cookieMaxAge,
+    keys: [process.env.cookieKeys],
+  })
+);
 app.use(passport.initialize());
 app.use(passport.session());
+
 app.use("/", userRoutes);
 app.use("/auth", authRoutes);
 
