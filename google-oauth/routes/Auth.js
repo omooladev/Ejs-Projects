@@ -6,5 +6,5 @@ const router = express.Router();
 router.route("/login").get((req, res) => {
   res.render("Login.ejs", { pageTitle: "Login", user: null });
 });
-router.route("/login/google").get((req, res) => {});
+router.route("/google").get((req, res) => {});
 module.exports = router;
