@@ -9,6 +9,7 @@
         <a class="" href="/">Home</a>
         <%}%>
       </li>
+      <%if(user){%>
       <li>
         <%if(pageTitle==="Profile Page"){%>
         <a class="active" href="/profile">Profile</a>
@@ -16,7 +17,6 @@
         <a class="" href="/profile">Profile</a>
         <%}%>
       </li>
-      <%if(user){%>
       <li class="logout"><a href="/logout">Logout</a></li>
       <%} else{%>
       <li class="login"><a href="/login">Login</a></li>
