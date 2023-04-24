@@ -59,6 +59,6 @@ body {
 .header ul nav li.login a:hover,
 .header ul nav li.logout a:hover {
   color: white;
-  background-color: rgb(255, 69, 0, 0.5);
+  background-color: rgb(255, 69, 0, 0.8);
   transition: all 0.4s ease;
 }
