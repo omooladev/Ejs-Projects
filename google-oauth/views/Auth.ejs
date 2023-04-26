@@ -1,0 +1,17 @@
+<html>
+  <%-include("./layout/head")-%>
+  <body>
+    <%-include("./layout/header")-%>
+    <main class="main">
+      <form class="login-form">
+        <%if(pageTitle==="Login"){%>
+        <h1>Login with</h1>
+        <%}%> <%if(pageTitle==="SignUp"){%>
+        <h1>SignUp with</h1>
+        <%}%>
+
+        <a class="icon" href="/auth/google"><i class="bx bxl-google"></i></a>
+      </form>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,215 @@
+.not_found {
+  text-align: center;
+  height: 100vh;
+  padding: 0 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.not_found h2 {
+  font-size: 1.2rem;
+  padding: 0.5rem 0;
+}
+
+.not_found p {
+  font-size: 1.1rem;
+  line-height: 1.65rem;
+  padding: 0.5rem 0;
+}
+
+.not_found a {
+  cursor: pointer;
+  background-color: purple;
+  color: white;
+  padding: 0.5rem 0.6rem;
+  margin: 0.5rem 0;
+  border-radius: 5px;
+  transition: all 0.5s ease-in;
+}
+
+.not_found a:hover {
+  background-color: rgba(128, 0, 128, 0.8);
+  transition: all 0.5s ease-out;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+input,
+button {
+  outline: none;
+  border: none;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  background-color: rgb(177, 240, 240);
+}
+
+.container {
+  max-width: 35rem;
+  width: 90%;
+  background-color: white;
+  padding: 1rem 2rem;
+  margin: 2rem auto;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container .reply {
+  display: none;
+  width: 100%;
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 5px;
+  width: 100%;
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+}
+.container .reply.success {
+  display: block;
+  color: white;
+  background-color: green;
+}
+.container .reply.error {
+  display: block;
+  background-color: red;
+  color: white;
+}
+.container h1 {
+  font-size: 1.5rem;
+  padding: 0.5rem 0;
+}
+.container .form {
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.container .form input {
+  padding: 0.5rem 0.6rem;
+  width: 100%;
+  font-size: 1rem;
+  background-color: #eee;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  margin: 0.5rem 0;
+}
+.container .form input:focus {
+  border-color: rgb(133, 11, 133);
+}
+.container .form button {
+  cursor: pointer;
+  border-radius: 5px;
+  width: 100%;
+  background-color: rgb(133, 11, 133);
+  color: white;
+  font-size: 1rem;
+  padding: 0.5rem 0.6rem;
+  margin: 1rem 0;
+}
+.container .form button:hover {
+  background-color: rgba(133, 11, 133, 0.8);
+}
+.container .grocery_list {
+  width: 100%;
+  padding: 1rem 0;
+}
+.container .grocery_list .grocery_item {
+  margin: 1rem 0;
+  background-color: rgba(133, 11, 133, 0.3);
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.6rem;
+  color: black;
+  text-transform: capitalize;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.container .grocery_list .grocery_item .item_name {
+  width: 100%;
+}
+.container .grocery_list .grocery_item .item_name,
+.container .grocery_list .grocery_item p {
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  font-size: 1.1rem;
+  line-height: 1.65rem;
+  margin: 0.5rem 0;
+}
+.container .grocery_list .grocery_item .item_name .name,
+.container .grocery_list .grocery_item p .name {
+  margin-right: 1.2rem;
+}
+.container .grocery_list .grocery_item .item_name .dots,
+.container .grocery_list .grocery_item p .dots {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 0 0.2rem;
+}
+.container .grocery_list .grocery_item .icons {
+  width: 5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  overflow: hidden;
+}
+.container .grocery_list .grocery_item .icons .icon {
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+.container .grocery_list .grocery_item .icons .delete_icon {
+  color: red;
+}
+.container .grocery_list .grocery_item .icons .edit_icon {
+  color: purple;
+}
+
+@media (min-width: 400px) {
+  .container .grocery_list .grocery_item {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .container .grocery_list .grocery_item .item_name {
+    width: auto;
+    margin: 0;
+  }
+  .container .grocery_list .grocery_item p {
+    text-align: left;
+    margin: 0;
+  }
+}
+@media (min-width: 600px) {
+  .container .form {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .container .form input {
+    width: 23rem;
+    margin: 0;
+  }
+  .container .form button {
+    width: 5rem;
+    margin: 0;
+  }
+}

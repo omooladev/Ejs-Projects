@@ -1,0 +1,27 @@
+<header class="header">
+  <ul>
+    <h1 class="logo">OAuth</h1>
+    <nav>
+      <li>
+        <%if(pageTitle==="Home Page"){%>
+        <a class="active" href="/">Home</a>
+        <%} else{%>
+        <a class="" href="/">Home</a>
+        <%}%>
+      </li>
+      <%if(user){%>
+      <li>
+        <%if(pageTitle==="Profile Page"){%>
+        <a class="active" href="/profile">Profile</a>
+        <%} else{%>
+        <a class="" href="/profile">Profile</a>
+        <%}%>
+      </li>
+      <li class="logout"><a href="/logout">Logout</a></li>
+      <%} else{%>
+      <li class="login"><a href="/auth/signup">SignUp</a></li>
+      <li class="login"><a href="/auth/login">Login</a></li>
+      <%}%>
+    </nav>
+  </ul>
+</header>

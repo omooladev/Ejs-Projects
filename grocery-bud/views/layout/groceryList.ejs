@@ -1,0 +1,17 @@
+<%groceryItems.forEach(item=>{%>
+<li class="grocery_item">
+  <%if(item.itemName.length<=35){%>
+  <p><%=item.itemName%></p>
+  <% }else{%>
+  <div class="item_name">
+    <p class="name"><%=item.itemName.slice(0,35)%></p>
+
+    <p class="dots">...</p>
+  </div>
+  <%}%>
+
+  <span class="icons">
+    <i class="bx bxs-edit edit_icon icon"></i><i class="bx bxs-trash-alt delete_icon icon"></i
+  ></span>
+</li>
+<%})%>

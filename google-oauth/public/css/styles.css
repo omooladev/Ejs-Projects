@@ -1,0 +1,179 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+body {
+  font-family: "JetBrains Mono", monospace;
+}
+.header {
+  padding: 1rem 5%;
+  background-color: rgb(248, 244, 244);
+}
+
+.header ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.header ul .logo {
+  color: orangered;
+}
+
+.header ul nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.header ul nav li {
+  margin: 0 0.5rem;
+}
+.header ul nav li a {
+  cursor: pointer;
+  color: black;
+  padding: 0.5rem 0.6rem;
+  text-transform: uppercase;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.header ul nav li a:hover {
+  color: rgb(255, 69, 0, 0.5);
+}
+.header ul nav li a.active {
+  color: orangered;
+}
+
+.header ul nav li.login a,
+.header ul nav li.logout a {
+  color: white;
+  background-color: orangered;
+}
+.header ul nav li.login a:hover,
+.header ul nav li.logout a:hover {
+  background-color: rgb(255, 69, 0, 0.8);
+  transition: all 0.4s ease;
+}
+
+.main {
+  padding: 1rem 5%;
+}
+
+.main .welcome_message {
+  font-size: 24px;
+  line-height: 36px;
+  text-align: center;
+}
+.main .welcome_message span {
+  color: orangered;
+  font-style: italic;
+}
+
+/*? login styles */
+.login-form {
+  max-width: 25rem;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-form h1 {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.login-form a.icon {
+  font-size: 40px;
+  color: orangered;
+  cursor: pointer;
+}
+/*? Profile styles */
+main.profile_page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main.profile_page .profile_picture {
+  margin: 0.5rem 0;
+}
+main.profile_page .profile_picture img {
+  border-radius: 50%;
+}
+main.profile_page .user_details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+main.profile_page .user_details .user_detail {
+  margin: 0.5rem 0;
+}
+main.profile_page .user_details .user_detail label:first-child {
+  font-weight: bold;
+}
+/*? Not Found styles */
+.not_found {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5%;
+}
+
+.not_found h1 {
+  font-size: 25px;
+  line-height: 38px;
+  padding: 0.5rem 0;
+}
+.not_found p {
+  font-size: 16px;
+  line-height: 24px;
+  padding: 0.5rem 0;
+}
+
+.not_found a {
+  cursor: pointer;
+  background-color: orangered;
+  padding: 0.5rem 0.6rem;
+  color: white;
+  margin: 0.5rem 0;
+  border-radius: 5px;
+}
+.not_found a:hover {
+  background-color: rgb(255, 69, 0, 0.8);
+  transition: all 0.4s ease;
+}
+@media (min-width: 400px) {
+  .header ul {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .header ul nav {
+    margin: 0;
+  }
+}
+@media (min-width: 500px) {
+  main.profile_page {
+    flex-direction: row;
+    align-items: center;
+  }
+  main.profile_page .user_details {
+    padding-left: 1rem;
+    width: auto;
+  }
+}

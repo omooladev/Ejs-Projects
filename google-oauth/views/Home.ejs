@@ -1,0 +1,15 @@
+<html>
+  <%-include("./layout/head")-%>
+  <body>
+    <%-include("./layout/header")-%>
+    <main class="main">
+      <%if(user){%>
+      <h1 class="welcome_message">
+        Hey! <span><%=user.displayName%></span> Welcome to Open Authorization test website
+      </h1>
+      <%}else{%>
+      <h1 class="welcome_message">Hey! Welcome to Open Authorization test website</h1>
+      <%}%>
+    </main>
+  </body>
+</html>
