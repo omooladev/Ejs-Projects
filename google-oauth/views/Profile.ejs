@@ -2,17 +2,20 @@
   <%-include("./layout/head")-%>
   <body>
     <%-include("./layout/header")-%>
-    <main class="main">
+    <main class="main profile_page">
       <div class="profile_picture">
         <img src="<%=user.profilePicture%>" />
       </div>
-      <div class="user_detail">
-        <label>FullName:</label>
-        <label><%=user.displayName%></label>
-      </div>
-      <div class="user_detail">
-        <label>Email:</label>
-        <label><%=user.email%></label>
+      <div class="user_details">
+        <div class="user_detail">
+          <label>FullName:</label>
+          <label><%=user.displayName%></label>
+        </div>
+        <div class="user_detail">
+          <label>Email:</label>
+          <label><%=user.email%></label>
+        </div>
+        
       </div>
     </main>
   </body>

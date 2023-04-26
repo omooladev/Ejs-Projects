@@ -20,7 +20,7 @@ body {
 
 .header ul {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
 }
@@ -33,6 +33,7 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  margin: 1rem 0;
 }
 
 .header ul nav li {
@@ -70,7 +71,12 @@ body {
 
 .main .welcome_message {
   font-size: 24px;
+  line-height: 36px;
   text-align: center;
+}
+.main .welcome_message span {
+  color: orangered;
+  font-style: italic;
 }
 
 /*? login styles */
@@ -93,6 +99,30 @@ body {
   color: orangered;
   cursor: pointer;
 }
+/*? Profile styles */
+main.profile_page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main.profile_page .profile_picture {
+  margin: 0.5rem 0;
+}
+main.profile_page .profile_picture img {
+  border-radius: 50%;
+}
+main.profile_page .user_details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+main.profile_page .user_details .user_detail {
+  margin: 0.5rem 0;
+}
+main.profile_page .user_details .user_detail label:first-child {
+  font-weight: bold;
+}
 /*? Not Found styles */
 .not_found {
   height: 100vh;
@@ -106,10 +136,12 @@ body {
 
 .not_found h1 {
   font-size: 25px;
+  line-height: 38px;
   padding: 0.5rem 0;
 }
 .not_found p {
   font-size: 16px;
+  line-height: 24px;
   padding: 0.5rem 0;
 }
 
@@ -124,4 +156,24 @@ body {
 .not_found a:hover {
   background-color: rgb(255, 69, 0, 0.8);
   transition: all 0.4s ease;
+}
+@media (min-width: 400px) {
+  .header ul {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .header ul nav {
+    margin: 0;
+  }
+}
+@media (min-width: 500px) {
+  main.profile_page {
+    flex-direction: row;
+    align-items: center;
+  }
+  main.profile_page .user_details {
+    padding-left: 1rem;
+    width: auto;
+  }
 }
