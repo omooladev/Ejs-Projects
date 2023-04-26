@@ -2,6 +2,18 @@
   <%-include("./layout/head")-%>
   <body>
     <%-include("./layout/header")-%>
-    <p>ola</p>
+    <main class="main">
+      <div class="profile_picture">
+        <img src="<%=user.profilePicture%>" />
+      </div>
+      <div class="user_detail">
+        <label>FullName:</label>
+        <label><%=user.displayName%></label>
+      </div>
+      <div class="user_detail">
+        <label>Email:</label>
+        <label><%=user.email%></label>
+      </div>
+    </main>
   </body>
 </html>
