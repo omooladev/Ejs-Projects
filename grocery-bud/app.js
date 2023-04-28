@@ -14,7 +14,7 @@ app.use(express.json());
 app.use("", groceriesRouter);
 app.use(ErrorHandlerMiddleWare);
 app.use(NotFound);
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5500;
 //? listen
 const startServer = () => {
   try {

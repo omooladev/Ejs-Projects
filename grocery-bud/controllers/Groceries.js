@@ -15,7 +15,7 @@ const dummyData = [
   },
 ];
 const getGroceries = (req, res) => {
-  res.render("index.ejs", { pageTitle: "Groceries", groceryItems: dummyData });
+  res.render("index.ejs", { pageTitle: "Groceries", groceryItems: null });
 };
 
 const createGrocery = (req, res) => {
@@ -27,7 +27,7 @@ const createGrocery = (req, res) => {
   const newItem = { id: Math.random(), itemName };
 
   dummyData.push(newItem);
-  
+
   // res.render("index.ejs", { pageTitle: "Groceries", groceryItems: dummyData });
 };
 

@@ -19,6 +19,11 @@ const submitFormHandler = async (event) => {
     setError(error);
   }
 };
+
+const getGroceries = () => {
+  const groceries = localStorage.getItem("groceries");
+  console.log(groceries);
+};
 form.addEventListener("submit", submitFormHandler);
 
 const setError = (message) => {

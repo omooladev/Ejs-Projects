@@ -182,6 +182,12 @@ body {
 .container .grocery_list .grocery_item .icons .edit_icon {
   color: purple;
 }
+.container .grocery_list .item_not_found {
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.65rem;
+  margin: 0.5rem 0;
+}
 
 @media (min-width: 400px) {
   .container .grocery_list .grocery_item {

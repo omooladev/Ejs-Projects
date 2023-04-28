@@ -1,4 +1,4 @@
-<%groceryItems.forEach(item=>{%>
+<%if(groceryItems){groceryItems.forEach(item=>{%>
 <li class="grocery_item">
   <%if(item.itemName.length<=35){%>
   <p><%=item.itemName%></p>
@@ -14,4 +14,6 @@
     <i class="bx bxs-edit edit_icon icon"></i><i class="bx bxs-trash-alt delete_icon icon"></i
   ></span>
 </li>
-<%})%>
+<%}) }else{%>
+<p class="item_not_found">No Items Found</p>
+<%}%>
