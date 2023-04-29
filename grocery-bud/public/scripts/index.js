@@ -42,9 +42,19 @@ const submitFormHandler = async (event) => {
   }
 };
 
-const getGroceries = () => {
-  const groceries = localStorage.getItem("groceries");
-  console.log(groceries);
+const getGroceries = async () => {
+  let groceryItems = await getGroceryItemsFromLocalStorage();
+  if (!groceryItems) {
+    groceryItems = null;
+  } else {
+    groceryItems = groceryItems;
+  }
+
+  try {
+    const response = await axios.post("/groceries", { groceryItems });
+  } catch (error) {
+    console.log(error);
+  }
 };
 form.addEventListener("submit", submitFormHandler);
 
@@ -52,3 +62,5 @@ const setError = (message) => {
   reply.innerHTML = message;
   return reply.classList.add("error");
 };
+
+getGroceries();

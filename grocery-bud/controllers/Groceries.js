@@ -5,8 +5,10 @@ const getGroceries = (req, res) => {
 };
 
 const createGrocery = (req, res) => {
-  const { itemName } = req.body;
-
+  const { itemName, groceryItems } = req.body;
+  if (groceryItems) {
+    return res.render("index.ejs", { pageTitle: "Groceries", groceryItems: groceryItems });
+  }
   if (!itemName) {
     throw new BadRequestError("Please provide an item");
   }
