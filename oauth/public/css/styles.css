@@ -157,7 +157,7 @@ body {
   line-height: 27px;
   margin: 0.5rem 0;
 }
-.form_section form .form_controls .form_control .eye {
+.form_section form .form_controls .form_control .password_container {
   position: relative;
 }
 .form_section form .form_controls .form_control input {
@@ -169,10 +169,10 @@ body {
   width: 100%;
   padding-right: 2.5rem;
 }
-.form_section form .form_controls .form_control input:focus {
+.form_section form .form_controls .form_control .password_container input:focus {
   outline: 1px solid orangered;
 }
-.form_section form .form_controls .form_control .eye .icon {
+.form_section form .form_controls .form_control .password_container .eye_container {
   position: absolute;
   cursor: pointer;
   font-size: 20px;
@@ -180,7 +180,16 @@ body {
   transform: translateY(-50%);
   right: 0.5rem;
 }
-.form_section form .form_controls .form_control .eye .icon.hide {
+.form_section form .form_controls .form_control .password_container .eye_container .eye-show {
+  display: none;
+}
+.form_section form .form_controls .form_control .password_container .eye_container.show .eye-show {
+  display: block;
+}
+.form_section form .form_controls .form_control .password_container .eye_container .eye-hide {
+  display: block;
+}
+.form_section form .form_controls .form_control .password_container .eye_container.show .eye-hide {
   display: none;
 }
 .form_section form .form_actions {
