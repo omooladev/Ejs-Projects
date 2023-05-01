@@ -96,7 +96,6 @@ body {
 .form_section form {
   display: flex;
   flex-direction: column;
-  background-color: #ffa500;
   padding: 1rem 2rem;
 }
 
@@ -106,29 +105,49 @@ body {
   text-align: center;
   margin: 0.5rem 0;
 }
+
 .form_section form .google {
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: space-around;
   background-color: white;
+  color: black;
   width: 100%;
   margin: 0.5rem 0;
   border-radius: 5px;
   box-shadow: #ccc 0px 5px 15px;
   font-size: 18px;
   line-height: 27px;
-  padding: 0 0.6rem;
+  padding: 0.5rem 0.6rem;
 }
-.form_section form .google .icon {
+.form_section form .google span {
   flex: 0.5;
+  font-size: 30px;
+  color: orangered;
 }
 .form_section form .google p {
   flex: 1.5;
 }
-.form_section form .form_controls {
-  margin: 0.5rem 0;
+.form_section form .or {
+  position: relative;
+  margin: 1.5rem 0;
 }
+.form_section form .or hr {
+  z-index: -1;
+}
+.form_section form .or p {
+  position: absolute;
+  top: -0.5rem;
+  left: 50%;
+  background-color: white;
+  width: 5rem;
+  margin-left: -2.5rem;
+  text-align: center;
+}
+/* .form_section form .form_controls {
+  margin: 0.5rem 0;
+} */
 .form_section form .form_controls .form_control {
   margin: 0.5rem 0;
   display: flex;
@@ -142,6 +161,9 @@ body {
 .form_section form .form_controls .form_control input {
   font-size: 16px;
   padding: 0.5rem 0.6rem;
+  border-radius: 5px;
+  background-color: #eee;
+  outline: 1px solid black;
 }
 .form_section form .form_actions {
   margin: 0.5rem 0;
@@ -152,12 +174,10 @@ body {
   padding: 0.5rem 0.6rem;
   background-color: orangered;
   color: white;
+  border-radius: 5px;
+  font-size: 18px;
 }
-.form_section a.icon {
-  font-size: 40px;
-  color: orangered;
-  cursor: pointer;
-}
+
 /*? Profile styles */
 main.profile_page {
   display: flex;
