@@ -1,6 +1,7 @@
 const EyeContainer = document.querySelector(".eye_container");
 const passwordInput = document.querySelector(".password_container input");
-console.log(passwordInput);
+const reply = document.querySelector(".reply");
+console.log(reply);
 
 EyeContainer.addEventListener("click", () => {
   EyeContainer.classList.toggle("show");
