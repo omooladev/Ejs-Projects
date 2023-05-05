@@ -1,5 +1,6 @@
 require("dotenv").config();
 const express = require("express");
+const path = require("path");
 const cookieSession = require("cookie-session");
 const connectDB = require("./db/connect");
 const authRoutes = require("./routes/Auth");
@@ -11,6 +12,7 @@ const app = express();
 // "engines": {
 //     "node": ">=14 <15"
 //   }
+app.set("views", path.join(__dirname, "..", "views"));
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(
