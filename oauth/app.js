@@ -8,6 +8,9 @@ const passport = require("./config/passport-setup");
 const NotFound = require("./middlewares/not-found");
 const app = express();
 
+// "engines": {
+//     "node": ">=14 <15"
+//   }
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(
