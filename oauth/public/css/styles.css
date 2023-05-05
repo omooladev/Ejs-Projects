@@ -86,26 +86,23 @@ body {
 /*? ------------------------------------------------ */
 /**              //Form styles                       */
 /*? ------------------------------------------------ */
-.form_section {
+.auth_form {
   max-width: 30rem;
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
-}
-
-.form_section form {
   display: flex;
   flex-direction: column;
-  padding: 1rem 2rem;
+  padding: 1rem 0rem;
 }
 
-.form_section form h1 {
+.auth_form h1 {
   font-size: 30px;
   line-height: 45px;
   text-align: center;
   margin: 0.5rem 0;
 }
 
-.form_section form .google {
+.auth_form .google {
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -120,22 +117,23 @@ body {
   line-height: 27px;
   padding: 0.5rem 0.6rem;
 }
-.form_section form .google span {
+.auth_form .google span {
   flex: 0.5;
   font-size: 30px;
   color: orangered;
 }
-.form_section form .google p {
+.auth_form .google p {
   flex: 1.5;
+  text-align: center;
 }
-.form_section form .or {
+.auth_form .or {
   position: relative;
   margin: 1.5rem 0;
 }
-.form_section form .or hr {
+.auth_form .or hr {
   z-index: -1;
 }
-.form_section form .or p {
+.auth_form .or p {
   position: absolute;
   top: -0.5rem;
   left: 50%;
@@ -144,23 +142,23 @@ body {
   margin-left: -2.5rem;
   text-align: center;
 }
-/* .form_section form .form_controls {
+/* .auth_form  .form_controls {
   margin: 0.5rem 0;
 } */
-.form_section form .form_controls .form_control {
+.auth_form .form_controls .form_control {
   margin: 0.5rem 0;
   display: flex;
   flex-direction: column;
 }
-.form_section form .form_controls .form_control label {
+.auth_form .form_controls .form_control label {
   font-size: 18px;
   line-height: 27px;
   margin: 0.5rem 0;
 }
-.form_section form .form_controls .form_control .password_container {
+.auth_form .form_controls .form_control .password_container {
   position: relative;
 }
-.form_section form .form_controls .form_control input {
+.auth_form .form_controls .form_control input {
   font-size: 16px;
   padding: 0.5rem 0.6rem;
   border-radius: 5px;
@@ -169,10 +167,13 @@ body {
   width: 100%;
   padding-right: 2.5rem;
 }
-.form_section form .form_controls .form_control .password_container input:focus {
+.auth_form .form_controls .form_control input:focus {
   outline: 1px solid orangered;
 }
-.form_section form .form_controls .form_control .password_container .eye_container {
+.auth_form .form_controls .form_control .password_container input:focus {
+  outline: 1px solid orangered;
+}
+.auth_form .form_controls .form_control .password_container .eye_container {
   position: absolute;
   cursor: pointer;
   font-size: 20px;
@@ -180,22 +181,31 @@ body {
   transform: translateY(-50%);
   right: 0.5rem;
 }
-.form_section form .form_controls .form_control .password_container .eye_container .eye-show {
+.auth_form .form_controls .form_control .password_container .eye_container .eye-show {
   display: none;
 }
-.form_section form .form_controls .form_control .password_container .eye_container.show .eye-show {
+.auth_form .form_controls .form_control .password_container .eye_container.show .eye-show {
   display: block;
 }
-.form_section form .form_controls .form_control .password_container .eye_container .eye-hide {
+.auth_form .form_controls .form_control .password_container .eye_container .eye-hide {
   display: block;
 }
-.form_section form .form_controls .form_control .password_container .eye_container.show .eye-hide {
+.auth_form .form_controls .form_control .password_container .eye_container.show .eye-hide {
   display: none;
 }
-.form_section form .form_actions {
+.auth_form .form_actions {
   margin: 1rem 0;
 }
-.form_section form .form_actions button {
+.auth_form .form_actions .reply {
+  text-align: center;
+  margin: 0.5rem 0;
+  opacity: 0;
+}
+.auth_form .form_actions .reply.error {
+  display: block;
+  color: red;
+}
+.auth_form .form_actions button {
   cursor: pointer;
   width: 100%;
   padding: 0.5rem 0.6rem;
@@ -204,7 +214,16 @@ body {
   border-radius: 5px;
   font-size: 18px;
 }
-
+/* .auth_form .form_footer {
+  background-color: red;
+} */
+.auth_form .form_footer p {
+  text-align: center;
+}
+.auth_form .form_footer p a {
+  cursor: pointer;
+  color: orangered;
+}
 /*? Profile styles */
 main.profile_page {
   display: flex;
@@ -272,6 +291,9 @@ main.profile_page .user_details .user_detail label:first-child {
   .header ul nav {
     margin: 0;
   }
+  .auth_form .google p {
+    text-align: left;
+  }
 }
 @media (min-width: 500px) {
   main.profile_page {
@@ -281,5 +303,8 @@ main.profile_page .user_details .user_detail label:first-child {
   main.profile_page .user_details {
     padding-left: 1rem;
     width: auto;
+  }
+  .auth_form {
+    padding: 1rem 2rem;
   }
 }

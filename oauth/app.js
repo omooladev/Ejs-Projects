@@ -8,6 +8,9 @@ const passport = require("./config/passport-setup");
 const NotFound = require("./middlewares/not-found");
 const app = express();
 
+// "engines": {
+//     "node": ">=14 <15"
+//   }
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(
@@ -28,7 +31,7 @@ app.use(NotFound);
 const PORT = process.env.PORT || 5000;
 const startServer = async () => {
   try {
-    await connectDB(process.env.MONGO_URI);
+    //await connectDB(process.env.MONGO_URI);
     console.log("connected to database");
     app.listen(PORT, () => {
       return console.log(`Server is listening at PORT ${PORT}`);

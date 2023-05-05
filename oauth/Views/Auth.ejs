@@ -3,13 +3,8 @@
   <body>
     <%-include("./layout/header")-%>
     <main class="main">
-      <section class="form_section">
-        <%if(pageTitle==="Login"){%> <%-include("./layout/loginForm")-%> <%}%>
-
-        <!-- <%if(pageTitle==="SignUp"){%>
-        <h1>SignUp with</h1>
-        <%}%> -->
-      </section>
+      <%if(pageTitle==="Login"){%> <%-include("./layout/loginForm")-%> <%}%>
+      <%if(pageTitle==="SignUp"){%> <%-include("./layout/signUpForm")-%> <%}%>
     </main>
   </body>
 </html>
