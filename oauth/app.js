@@ -12,7 +12,7 @@ const app = express();
 
 
 app.set("view engine", "ejs");
-app.set("views", path.join(__dirname, "Views"));
+// app.set("views", path.join(__dirname, "Views"));
 app.use(express.static("public"));
 app.use(
   cookieSession({
