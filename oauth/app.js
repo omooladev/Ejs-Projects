@@ -9,12 +9,10 @@ const passport = require("./config/passport-setup");
 const NotFound = require("./middlewares/not-found");
 const app = express();
 
-// "engines": {
-//     "node": ">=14 <15"
-//   }
+
 
 app.set("view engine", "ejs");
-app.set("views", path.join(__dirname, "Views"));
+app.set("views", path.join(__dirname, "views"));
 app.use(express.static("public"));
 app.use(
   cookieSession({
