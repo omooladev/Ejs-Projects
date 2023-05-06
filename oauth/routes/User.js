@@ -6,9 +6,9 @@ const router = express.Router();
 router.route("/").get((req, res) => {
   res.redirect("/home");
 });
-// router.route("/home").get((req, res) => {
-//   res.render("Home.ejs", { pageTitle: "Home Page", user: req.user });
-// });
+router.route("/home").get((req, res) => {
+  res.render("Home.ejs", { pageTitle: "Home Page", user: req.user });
+});
 router.get("/profile", Authentication, (req, res) => {
   console.log("profile");
   res.render("Profile.ejs", { pageTitle: "Profile Page", user: req.user });
