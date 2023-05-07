@@ -133,6 +133,15 @@ body {
 .auth_form .or hr {
   z-index: -1;
 }
+.auth_form .reply {
+  text-align: center;
+  margin: 0.5rem 0;
+  /* opacity: 0; */
+}
+.auth_form .reply.error {
+  display: block;
+  color: red;
+}
 .auth_form .or p {
   position: absolute;
   top: -0.5rem;
@@ -196,15 +205,7 @@ body {
 .auth_form .form_actions {
   margin: 1rem 0;
 }
-.auth_form .form_actions .reply {
-  text-align: center;
-  margin: 0.5rem 0;
-  opacity: 0;
-}
-.auth_form .form_actions .reply.error {
-  display: block;
-  color: red;
-}
+
 .auth_form .form_actions button {
   cursor: pointer;
   width: 100%;

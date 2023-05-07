@@ -1,22 +1,37 @@
-
+/*? ------------------------------------------------ */
+/**              //Form Elements                     */
+/*? ------------------------------------------------ */
+const eyeContainer = document.querySelector(".eye_container");
 const passwordInput = document.querySelector(".password_container input");
+const authForm = document.querySelector(".auth_form");
 const authReply = document.querySelector(".reply");
-
-//? ------------------------------------------------- //
-
-
 const authUsername = document.querySelector(".auth_username_input");
 const authEmailAddress = document.querySelector(".auth_email_address_input");
 const authPassword = document.querySelector(".auth_password_input");
 const authFormButton = document.querySelector(".auth_form .form_actions button");
-
-const submitFormHandler = async (event) => {
-  console.log(authFormButton.className);
+/*? ------------------------------------------------ */
+/**              //Functions                         */
+/*? ------------------------------------------------ */
+const validateForm = async (formTypeIsLogin, formTypeIsSignUp) => {
+  if (formTypeIsLogin) {
+  }
+  console.log(formTypeIsLogin, formTypeIsSignUp);
 };
-authFormButton.addEventListener("click", submitFormHandler);
+const submitFormHandler = async (event) => {
+  event.preventDefault();
+  console.log(authFormButton.className);
+  const formTypeIsLogin = authFormButton.className.includes("login");
+  const formTypeIsSignUp = authFormButton.className.includes("signup");
+  await validateForm(formTypeIsLogin, formTypeIsSignUp);
+};
 
-EyeContainer.addEventListener("click", () => {
-  EyeContainer.classList.toggle("show");
-  if (EyeContainer.className.includes("show")) return (passwordInput.type = "text");
+const toggleEyeContainerHandler = () => {
+  eyeContainer.classList.toggle("show");
+  if (eyeContainer.className.includes("show")) return (passwordInput.type = "text");
   return (passwordInput.type = "password");
-});
+};
+/*? ------------------------------------------------ */
+/**              //Event Listeners                   */
+/*? ------------------------------------------------ */
+authForm.addEventListener("submit", submitFormHandler);
+eyeContainer.addEventListener("click", toggleEyeContainerHandler);

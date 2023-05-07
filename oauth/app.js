@@ -32,7 +32,7 @@ app.use(NotFound);
 const PORT = process.env.PORT || 5000;
 const startServer = async () => {
   try {
-    await connectDB(process.env.MONGO_URI);
+    //await connectDB(process.env.MONGO_URI);
     console.log("connected to database");
     app.listen(PORT, () => {
       return console.log(`Server is listening at PORT ${PORT}`);
