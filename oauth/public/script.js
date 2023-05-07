@@ -13,16 +13,42 @@ const authFormButton = document.querySelector(".auth_form .form_actions button")
 /**              //Functions                         */
 /*? ------------------------------------------------ */
 const validateForm = async (formTypeIsLogin, formTypeIsSignUp) => {
-  if (formTypeIsLogin) {
+  let authUsernameValue;
+  let authEmailAddressValue;
+  let authPasswordValue = authPassword.value;
+  let checkGlobal;
+  try {
+    if (formTypeIsLogin) {
+      authUsernameValue = authUsername.value;
+      if (!authUsernameValue && !authPasswordValue)
+        throw new Error("Please provide your credentials");
+      if (!authUsernameValue) throw new Error("Please provide your username");
+    }
+    if (formTypeIsSignUp) {
+      authEmailAddressValue = authEmailAddress.value;
+      if (!authEmailAddressValue && !authPasswordValue)
+        throw new Error("Please provide your credentials");
+      if (!authEmailAddressValue) throw new Error("Please provide your email address");
+    }
+    if (!authPasswordValue) throw new Error("Please provide your password");
+    if (checkGlobal) console.log(formTypeIsLogin, formTypeIsSignUp);
+  } catch (error) {
+    authReply.innerHTML = error.message;
+    authReply.classList.add("error");
   }
-  console.log(formTypeIsLogin, formTypeIsSignUp);
+};
+const resetError = () => {
+  authReply.innerHTML = "This is the reply";
+  authReply.classList.remove("error");
 };
 const submitFormHandler = async (event) => {
   event.preventDefault();
-  console.log(authFormButton.className);
+  //* reset error
+  resetError();
   const formTypeIsLogin = authFormButton.className.includes("login");
   const formTypeIsSignUp = authFormButton.className.includes("signup");
-  await validateForm(formTypeIsLogin, formTypeIsSignUp);
+  //* get the user data after validating form
+  const userData = await validateForm(formTypeIsLogin, formTypeIsSignUp);
 };
 
 const toggleEyeContainerHandler = () => {

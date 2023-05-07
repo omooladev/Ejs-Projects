@@ -136,10 +136,10 @@ body {
 .auth_form .reply {
   text-align: center;
   margin: 0.5rem 0;
-  /* opacity: 0; */
+  opacity: 0;
 }
 .auth_form .reply.error {
-  display: block;
+  opacity: 1;
   color: red;
 }
 .auth_form .or p {
