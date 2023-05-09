@@ -2,17 +2,11 @@
 /**              //Form Elements                     */
 /*? ------------------------------------------------ */
 const eyeContainer = document.querySelector(".eye_container");
-const passwordInput = document.querySelector(".password_container input");
-const authForm = document.querySelector(".auth_form");
 const authReply = document.querySelector(".reply");
-const authUsername = document.querySelector(".auth_username_input");
-const authEmailAddress = document.querySelector(".auth_email_address_input");
-const authPassword = document.querySelector(".auth_password_input");
-const authFormButton = document.querySelector(".auth_form .form_actions button");
+
 /*? ------------------------------------------------ */
 /**              //Functions                         */
 /*? ------------------------------------------------ */
-
 const sendRequest = async ({ method = "GET", uri, userData = null }) => {
   console.log(uri, userData);
 };
@@ -71,15 +65,6 @@ const resetError = () => {
   authReply.innerHTML = "This is the reply";
   authReply.classList.remove("error");
 };
-const submitFormHandler = async (event) => {
-  event.preventDefault();
-  //* reset error
-  resetError();
-  const formTypeIsLogin = authFormButton.className.includes("login");
-  const formTypeIsSignUp = authFormButton.className.includes("signup");
-  //* get the user data after validating form
-  const userData = await validateForm(formTypeIsLogin, formTypeIsSignUp);
-};
 
 const toggleEyeContainerHandler = () => {
   eyeContainer.classList.toggle("show");
@@ -89,5 +74,5 @@ const toggleEyeContainerHandler = () => {
 /*? ------------------------------------------------ */
 /**              //Event Listeners                   */
 /*? ------------------------------------------------ */
-authForm.addEventListener("submit", submitFormHandler);
+
 eyeContainer.addEventListener("click", toggleEyeContainerHandler);
