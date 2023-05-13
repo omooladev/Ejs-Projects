@@ -1,3 +1,3 @@
 const BadRequestError = require("./bad-request");
-
-module.exports = { BadRequestError };
+const UnAuthenticatedError = require("./unAuthenticated");
+module.exports = { BadRequestError, UnAuthenticatedError };
