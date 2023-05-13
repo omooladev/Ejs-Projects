@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const cookieSession = require("cookie-session");
+const ErrorHandlerMiddleWare = require("./middlewares/error-handler");
 const NotFound = require("./middlewares/not-found");
 const authRoutes = require("./routes/Auth");
 const userRoutes = require("./routes/User");
@@ -24,6 +25,7 @@ app.use("/", userRoutes);
 app.use("/auth", authRoutes);
 
 //? middlewares
+app.use(ErrorHandlerMiddleWare);
 app.use(NotFound);
 
 module.exports = app;

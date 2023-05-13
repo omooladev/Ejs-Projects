@@ -16,11 +16,15 @@ authPassword.value = "olawole2001";
 const sendRequest = async ({ method = "GET", uri, userData = null }) => {
   try {
     if (method === "POST") {
-      const { status } = await axios.post(uri, userData);
-      console.log(status);
+      const response = await axios.post(uri, userData);
+      console.log(response);
     }
   } catch (error) {
-    authReply.innerHTML = error.message;
+    let errorMessage;
+    if (error.response) {
+      errorMessage = error.response.data.message;
+    }
+    authReply.innerHTML = errorMessage || error.message;
     authReply.classList.add("error");
   }
 };
