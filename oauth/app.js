@@ -9,6 +9,7 @@ const passport = require("./config/passport-setup");
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "Views"));
+app.use(express.json());
 app.use(express.static("public"));
 app.use(
   cookieSession({
