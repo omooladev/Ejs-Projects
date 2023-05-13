@@ -1,5 +1,6 @@
 const passport = require("passport");
 const GoogleStrategy = require("passport-google-oauth20");
+const LocalStrategy = require("passport-local");
 const User = require("../models/User");
 
 passport.serializeUser((user, done) => {
@@ -43,5 +44,7 @@ passport.use(
     }
   )
 );
+
+passport.use("signup", new LocalStrategy({}, function () {}));
 
 module.exports = passport;

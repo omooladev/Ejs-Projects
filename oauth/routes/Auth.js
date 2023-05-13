@@ -10,6 +10,9 @@ router.route("/login").get((req, res) => {
 router.route("/signup").get((req, res) => {
   res.render("Auth.ejs", { pageTitle: "SignUp", user: null });
 });
+router.post("/signup", (req, res) => {
+  console.log("signup successfully");
+});
 router.get("/google", passport.authenticate("google", { scope: ["profile", "email"] }));
 
 router.get("/google/redirect", passport.authenticate("google"), (req, res) => {
