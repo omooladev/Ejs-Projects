@@ -11,8 +11,8 @@ router.route("/login").get((req, res) => {
 router.route("/signup").get((req, res) => {
   res.render("Auth.ejs", { pageTitle: "SignUp", user: null });
 });
-router.post("/signup", (req, res) => {
-  throw new BadRequestError("Please provide email address and password");
+router.post("/login", passport.authenticate("login"), (req, res) => {
+  console.log(req.body);
 });
 router.get("/google", passport.authenticate("google", { scope: ["profile", "email"] }));
 

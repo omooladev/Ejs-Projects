@@ -20,6 +20,7 @@ const sendRequest = async ({ method = "GET", uri, userData = null }) => {
       console.log(response);
     }
   } catch (error) {
+    console.log(error);
     let errorMessage;
     if (error.response) {
       errorMessage = error.response.data.message;

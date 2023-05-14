@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/passport-local": "^1.0.35",
     "cookie-session": "^2.0.0",
     "dotenv": "^16.0.3",
     "ejs": "^3.1.9",
