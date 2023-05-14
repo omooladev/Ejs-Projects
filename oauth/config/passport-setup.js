@@ -2,6 +2,7 @@ const passport = require("passport");
 const GoogleStrategy = require("passport-google-oauth20");
 const localStrategy = require("passport-local").Strategy;
 const User = require("../models/User");
+const { BadRequestError } = require("../errors");
 
 passport.serializeUser((user, done) => {
   done(null, user.id);
@@ -47,8 +48,13 @@ passport.use(
 
 passport.use(
   "login",
-  new localStrategy((email, password) => {
-    console.log("olawole");
+  new localStrategy(async(username, password) => {
+    //important-----> verify fields value
+    console.log(username, password);
+    if (username === "null" || password === "null") {
+      throw new BadRequestError("Please provide Email Address or Password");
+    }
+    //const user=
   })
 );
 

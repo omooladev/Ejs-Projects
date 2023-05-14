@@ -8,7 +8,8 @@ const authEmailAddress = document.querySelector(".auth_email_address_input");
 const authPassword = document.querySelector(".auth_password_input");
 const authFormButton = document.querySelector(".auth_form .form_actions button");
 
-authEmailAddress.value = "omosuyiadewole1@gmail.com";
+//authEmailAddress.value = "omosuyiadewole1@gmail.com"; //todo will uncomment this when working on the signup form
+authUsername.value = "omooladev";
 authPassword.value = "olawole2001";
 /*? ------------------------------------------------ */
 /**              //Functions                         */
@@ -37,21 +38,34 @@ const validateForm = async (formTypeIsLogin, formTypeIsSignUp) => {
   try {
     if (formTypeIsLogin) {
       authUsernameValue = authUsername.value;
-      if (!authUsernameValue && !authPasswordValue) {
-        throw new Error("Please provide your credentials");
-      }
-      if (!authUsernameValue) {
-        authUsername.focus();
-        throw new Error("Please provide your username");
-      }
-      if (authUsernameValue && authPasswordValue) {
+      // if (!authUsernameValue && !authPasswordValue) {
+      //   throw new Error("Please provide your credentials");
+      // }
+      // if (!authUsernameValue) {
+      //   authUsername.focus();
+      //   throw new Error("Please provide your username");
+      // }
+      //todo will delete this later--->The reason is because i want to check if the password is not provided and action should take place
+      if (authUsernameValue || authPasswordValue) {
         const response = await sendRequest({
           method: "POST",
           uri: "/auth/login",
-          userData: { username: authUsernameValue, password: authPasswordValue },
+          userData: {
+            username: authUsernameValue || "null",
+            password: authPasswordValue || "null",
+          },
         });
         return;
       }
+      //todo will uncomment this later
+      // if (authUsernameValue && authPasswordValue) {
+      //   const response = await sendRequest({
+      //     method: "POST",
+      //     uri: "/auth/login",
+      //     userData: { username: authUsernameValue, password: authPasswordValue },
+      //   });
+      //   return;
+      // }
     }
     if (formTypeIsSignUp) {
       authEmailAddressValue = authEmailAddress.value;
@@ -62,6 +76,8 @@ const validateForm = async (formTypeIsLogin, formTypeIsSignUp) => {
         authEmailAddress.focus();
         throw new Error("Please provide your email address");
       }
+
+      //todo will uncomment this later
       if (authEmailAddressValue && authPasswordValue) {
         const response = await sendRequest({
           method: "POST",
@@ -71,10 +87,11 @@ const validateForm = async (formTypeIsLogin, formTypeIsSignUp) => {
         return;
       }
     }
-    if (!authPasswordValue) {
-      authPassword.focus();
-      throw new Error("Please provide your password");
-    }
+    //todo will uncomment this later
+    // if (!authPasswordValue) {
+    //   authPassword.focus();
+    //   throw new Error("Please provide your password");
+    // }
   } catch (error) {
     authReply.innerHTML = error.message;
     authReply.classList.add("error");
