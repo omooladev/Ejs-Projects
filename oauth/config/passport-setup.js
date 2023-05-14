@@ -48,13 +48,21 @@ passport.use(
 
 passport.use(
   "login",
-  new localStrategy(async(username, password) => {
+  new localStrategy(async (username, password, done) => {
     //important-----> verify fields value
     console.log(username, password);
     if (username === "null" || password === "null") {
       throw new BadRequestError("Please provide Email Address or Password");
     }
     //const user=
+  })
+);
+
+
+passport.use(
+  "signup",
+  new localStrategy({ usernameField: "emailAddress" }, (emailAddress, password, done) => {
+    console.log(emailAddress, password);
   })
 );
 

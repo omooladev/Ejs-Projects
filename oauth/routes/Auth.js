@@ -16,7 +16,12 @@ router.post("/login", passport.authenticate("login"), (req, res) => {
   console.log("true");
   console.log(req.body);
 });
-// router.post("/login", (req, res) => {
+//important--------> Route to signup users
+router.post("/signup", passport.authenticate("signup"), (req, res) => {
+  console.log("true");
+  console.log(req.body);
+});
+// router.post("/signup", (req, res) => {
 //   console.log(req.body);
 // });
 router.get("/google", passport.authenticate("google", { scope: ["profile", "email"] }));

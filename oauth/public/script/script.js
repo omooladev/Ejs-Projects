@@ -8,8 +8,8 @@ const authEmailAddress = document.querySelector(".auth_email_address_input");
 const authPassword = document.querySelector(".auth_password_input");
 const authFormButton = document.querySelector(".auth_form .form_actions button");
 
-//authEmailAddress.value = "omosuyiadewole1@gmail.com"; //todo will uncomment this when working on the signup form
-authUsername.value = "omooladev";
+authEmailAddress.value = "omosuyiadewole1@gmail.com";
+//authUsername.value = "omooladev";
 authPassword.value = "olawole2001";
 /*? ------------------------------------------------ */
 /**              //Functions                         */
@@ -69,13 +69,13 @@ const validateForm = async (formTypeIsLogin, formTypeIsSignUp) => {
     }
     if (formTypeIsSignUp) {
       authEmailAddressValue = authEmailAddress.value;
-      if (!authEmailAddressValue && !authPasswordValue) {
-        throw new Error("Please provide your email address and password");
-      }
-      if (!authEmailAddressValue) {
-        authEmailAddress.focus();
-        throw new Error("Please provide your email address");
-      }
+      // if (!authEmailAddressValue && !authPasswordValue) {
+      //   throw new Error("Please provide your email address and password");
+      // }
+      // if (!authEmailAddressValue) {
+      //   authEmailAddress.focus();
+      //   throw new Error("Please provide your email address");
+      // }
 
       //todo will uncomment this later
       if (authEmailAddressValue && authPasswordValue) {
