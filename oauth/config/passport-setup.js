@@ -46,6 +46,8 @@ passport.use(
   )
 );
 
+
+//important--------> Passport Local strategy setup for Login
 passport.use(
   "login",
   new localStrategy(async (username, password, done) => {
@@ -58,7 +60,7 @@ passport.use(
   })
 );
 
-
+//important--------> Passport Local strategy setup for SignUp
 passport.use(
   "signup",
   new localStrategy({ usernameField: "emailAddress" }, (emailAddress, password, done) => {
