@@ -1,6 +1,9 @@
 const mongoose = require("mongoose");
-
-const visitsSchema = new Schema({
+const visitsSchema = new mongoose.Schema({
+  visitId: {
+    type: String,
+    required: ["true", "visit id is required"],
+  },
   //note-----> impressions mean number of visits to our website
   impressions: {
     type: Number,
