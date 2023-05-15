@@ -4,7 +4,7 @@ const Visits = require("./models/Visits");
 const saveVisits = async ({ type: visitType }) => {
   let visits = await Visits.findOne({ visitId: "visitID" });
   const { impressions, numOfSignUps, numOfLogins, numOfLogouts } = visits;
-  console.log(visits);
+  // console.log(visits);
   switch (visitType) {
     case "impressions": {
       const newImpression = impressions + 1;

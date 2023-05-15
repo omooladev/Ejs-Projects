@@ -78,14 +78,17 @@ const validateForm = async (formTypeIsLogin, formTypeIsSignUp) => {
       // }
 
       //todo will uncomment this later
-      if (authEmailAddressValue && authPasswordValue) {
-        const response = await sendRequest({
-          method: "POST",
-          uri: "/auth/signup",
-          userData: { emailAddress: authEmailAddressValue, password: authPasswordValue },
-        });
-        return;
-      }
+      // if (authEmailAddressValue && authPasswordValue) {
+      const response = await sendRequest({
+        method: "POST",
+        uri: "/auth/signup",
+        userData: {
+          emailAddress: authEmailAddressValue || "null",
+          password: authPasswordValue || "null",
+        },
+      });
+      //return;
+      //}
     }
     //todo will uncomment this later
     // if (!authPasswordValue) {
