@@ -1,5 +1,5 @@
 require("dotenv").config();
-
+require("express-async-errors");
 const app = require("./app");
 const connectDB = require("./db/connect");
 const { saveVisits } = require("./saveVisits");

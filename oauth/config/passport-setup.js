@@ -66,8 +66,12 @@ passport.use(
     if (emailAddress === "null" || password === "null") {
       throw new BadRequestError("Please provide Email Address or Password");
     }
-    const userDetails = new User({ email: emailAddress, password });
-    await userDetails.save();
+    try {
+      const userDetails = new User({ email: emailAddress, password });
+      await userDetails.save();
+    } catch (error) {
+      done(error, null);
+    }
   })
 );
 

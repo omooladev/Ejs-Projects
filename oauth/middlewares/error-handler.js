@@ -5,7 +5,10 @@ const ErrorHandlerMiddleWare = (error, req, res, next) => {
     statusCode: error.statusCode || StatusCodes.INTERNAL_SERVER_ERROR,
   };
   if (error.code === 11000) {
-    console.log("code erroe");
+    return (customError = {
+      message: `${Object.keys(error.keyValue)} already exists,please provide another`,
+      statusCode: StatusCodes.BAD_REQUEST,
+    });
   }
   return res.status(customError.statusCode).json({ message: customError.message });
 };
