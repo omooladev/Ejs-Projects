@@ -8,7 +8,7 @@ const saveVisits = async ({ type: visitType }) => {
   switch (visitType) {
     case "impressions": {
       const newImpression = impressions + 1;
-      await Visits.updateOne({ visitId: "visitID" }, { impressions: newImpression });
+      //await Visits.updateOne({ visitId: "visitID" }, { impressions: newImpression });
       break;
     }
   }

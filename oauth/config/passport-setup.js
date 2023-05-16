@@ -46,7 +46,6 @@ passport.use(
   )
 );
 
-
 //important--------> Passport Local strategy setup for Login
 passport.use(
   "login",
@@ -54,7 +53,7 @@ passport.use(
     //important-----> verify fields value
     console.log(username, password);
     if (username === "null" || password === "null") {
-      throw new BadRequestError("Please provide Email Address or Password");
+      throw new BadRequestError("Please provide username or password");
     }
     //const user=
   })
@@ -64,7 +63,11 @@ passport.use(
 passport.use(
   "signup",
   new localStrategy({ usernameField: "emailAddress" }, (emailAddress, password, done) => {
-    console.log(emailAddress, password);
+    if (emailAddress === "null" || password === "null") {
+      throw new BadRequestError("Please provide Email Address or Password");
+    }
+    const userDetails = new User({ email: emailAddress, password });
+    console.log(userDetails);
   })
 );
 
