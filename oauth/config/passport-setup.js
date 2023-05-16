@@ -62,12 +62,12 @@ passport.use(
 //important--------> Passport Local strategy setup for SignUp
 passport.use(
   "signup",
-  new localStrategy({ usernameField: "emailAddress" }, (emailAddress, password, done) => {
+  new localStrategy({ usernameField: "emailAddress" }, async (emailAddress, password, done) => {
     if (emailAddress === "null" || password === "null") {
       throw new BadRequestError("Please provide Email Address or Password");
     }
     const userDetails = new User({ email: emailAddress, password });
-    console.log(userDetails);
+    await userDetails.save();
   })
 );
 
