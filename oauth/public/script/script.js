@@ -17,11 +17,11 @@ authPassword.value = "olawole2001";
 const sendRequest = async ({ method = "GET", uri, userData = null }) => {
   try {
     if (method === "POST") {
-      const response = await axios.post(uri, userData);
-      console.log(response);
+      const { data } = await axios.post(uri, userData);
+      console.log(data);
+      return;
     }
   } catch (error) {
-    console.log(error);
     let errorMessage;
     if (error.response) {
       errorMessage = error.response.data.message;
@@ -87,6 +87,10 @@ const validateForm = async (formTypeIsLogin, formTypeIsSignUp) => {
           password: authPasswordValue || "null",
         },
       });
+      // console.log(response.data);
+      // if (response.status === 201) {
+      //   console.log("Account Created successfully");
+      // }
       //return;
       //}
     }

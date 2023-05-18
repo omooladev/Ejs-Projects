@@ -4,7 +4,8 @@ const localStrategy = require("passport-local").Strategy;
 const User = require("../models/User");
 const { BadRequestError } = require("../errors");
 
-passport.serializeUser((user, done) => {
+passport.serializeUser((user, done, config) => {
+  console.log(config);
   done(null, user.id);
 });
 passport.deserializeUser(async (id, done) => {
@@ -62,17 +63,25 @@ passport.use(
 //important--------> Passport Local strategy setup for SignUp
 passport.use(
   "signup",
-  new localStrategy({ usernameField: "emailAddress" }, async (emailAddress, password, done) => {
-    if (emailAddress === "null" || password === "null") {
-      throw new BadRequestError("Please provide Email Address or Password");
+  new localStrategy(
+    {
+      usernameField: "emailAddress",
+      // session: false,
+    },
+    async (emailAddress, password, done) => {
+      if (emailAddress === "null" || password === "null") {
+        throw new BadRequestError("Please provide Email Address or Password");
+      }
+
+      try {
+        const user = new User({ email: emailAddress, password });
+        await user.save();
+        return done(null, user);
+      } catch (error) {
+        return done(error, null);
+      }
     }
-    try {
-      const userDetails = new User({ email: emailAddress, password });
-      await userDetails.save();
-    } catch (error) {
-      done(error, null);
-    }
-  })
+  )
 );
 
 module.exports = passport;
